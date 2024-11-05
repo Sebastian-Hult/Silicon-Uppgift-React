@@ -55,7 +55,7 @@
     /* --clr-body-bg: var(--color-white); */
 }
 
-.dark {
+html[data-theme="dark"] {
     --color-body-bg: #0B0F19;
     --color-body-text: #fff;
     --color-heading-dark: #fff;
