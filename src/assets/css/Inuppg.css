@@ -1,0 +1,1449 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+:root {
+    /* --Light Mode Colors-- */
+
+    /* Grayscales */
+    --color-white: #ffffff;
+    --color-body-bg: #ffffff;
+    --color-light-bg: #F3F6FF; /* Gray-100 */
+    --color-secondary: #EFF2FC; /* Gray-200 */
+    --color-divider-border: #E2E5F1; /* Gray-300 */
+    --color-forms-border: #D4D7E5; /* Gray-400 */
+    --color-input-placeholder: #B4B7C9; /* Gray-500 */
+    --color-muted-text: #9397AD; /* Gray-600 */
+    --color-body-text: #565973; /* Gray-700 */
+    --color-navigation: #33354D; /* Gray-800 */
+    --color-heading-dark: #0B0F19; /* Gray-900 */
+    /* Brand Colors */
+    --color-primary: #6366F1;
+    --color-gradient: linear-gradient(0deg, rgba(99,102,241,0.1) 0%, rgba(218,70,239,0.05) 42%, rgba(241,244,253,0.07) 83%);
+    --color-gradient-backup: background: rgb(99,102,241);
+    /* System Colors */
+    --color-error: #EF4444;
+    --color-succes: #22C55E;
+    --color-warning: #FFBA08;
+    --color-info: #4C82F7;
+    /* Shadows */
+    --shadow-small: 0 4.4px 12px -1px rgba(19, 16, 34, 0.06), 0 2px 6.4px -1px rgba(19, 16, 34, 0.03);
+    --shadow-medium: 0 4.4px 20px -1px rgba(19, 16, 34, 0.05), 0 4px 9px -1px rgba(19, 16, 34, 0.03);
+    --shadow-large: 0 4.8px 24.4px -6px rgba(19, 16, 34, 0.1), 0 4px 13px -2px rgba(19, 16, 34, 0.06);
+    --shadow-brand-btn: 0 8px 18px -8px rgba(99, 101, 241, 0.9);
+    --shadow-secondary: 0 8px 18px -8px rgba(19, 16, 34, 0.15);
+
+    /* --Utility-- */
+    --container-padding: 1rem;
+    --transition-time: all 0.2s;
+    --font-size-navigation: 16px;
+    --font-size-L: 18px;
+    --font-size-M: 16px;
+    --font-size-S: 14px;
+    --font-weight-reg: 400;
+    --font-weight-med: 500;
+    --font-weight-semi: 600;
+    --font-weight-bold: 700;
+    --font-weight-xbold: 800;
+    --h1-font-size: 40px;
+    --h2-font-size: 32px;
+    --h3-font-size: 28px;
+    --h4-font-size: 24px;
+    --h5-font-size: 20px;
+    --h6-font-size: 18px;
+
+    /* --clr-text-body: var(--color-dark); */
+    /* --clr-headline:  */
+    /* --clr-body-bg: var(--color-white); */
+}
+
+.dark {
+    --color-body-bg: #0B0F19;
+    --color-body-text: #fff;
+    --color-heading-dark: #fff;
+    --color-light-bg: #33354D;
+    --color-white: #33354D;
+    --color-secondary: #33354D;
+    /* --clr-text-body: var(--clr-white); */
+    /* --clr-body-bg: var(--color-dark); */
+}
+
+/* ---UTILITYKLASSER--- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body, button {
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    background-color: var(--color-body-bg);
+}
+p {
+    color: var(--color-body-text);
+}
+h1, h2 ,h3 ,h4 ,h5 ,h6 {
+    color: var(--color-heading-dark);
+}
+.wrapper {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+.container {
+    width: 100%;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+
+}
+
+a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+/* Början av Headern */ /* Denna del har jag tagit hjälp från Hans video */
+
+header {
+    .container {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: 1fr auto auto;
+        gap: 1.5rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+}
+
+.navbar {
+    display: none;
+}
+
+.nav-link {
+    color: var(--color-heading-dark);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+.active {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+.btn-toggle-switch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    .label {
+        display: none;
+    }
+}
+
+.toggle-switch {
+    --_w: 60px;
+    --_h: 30px;
+    --_ball-size-ratio: .85;
+
+    width: var(--_w);
+    height: var(--_h);
+    display: inline-block;
+    position: relative;
+
+    input[type="checkbox"] {
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+
+    input[type="checkbox"]:focus-visible + .slider {
+        outline: 1px solid var(--color-primary);
+        outline-offset: 2px;
+    }
+
+    .slider {
+        position: absolute;
+        inset: 0;
+        background-color: var(--color-input-placeholder);
+        border-radius: 100vw;
+        box-shadow: inset var(--shadow-secondary);
+        cursor: pointer;
+        transition: 400ms;
+    }
+
+    .slider::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 7%;
+        transform: translateY(10%);
+        height: calc(100% * var(--_ball-size-ratio));
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background-color: var(--color-white);
+        transition: 400ms;
+    }
+    input[type="checkbox"]:checked ~ .slider::before {
+        left: calc(100% - var(--_h));
+        background-color: var(--color-white);
+    }
+    input[type="checkbox"]:checked ~ .slider {
+        background-color: var(--color-primary);
+        box-shadow: var(--shadow-brand-btn);
+    }
+}
+
+#loggain {
+    display: none;
+}
+
+.btn-primary {
+    background-color: var(--color-primary); 
+    color: var(--color-white);
+    border: none;
+    border-radius: 8px;
+    padding: 12px 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    text-decoration: none;
+    border: 1px solid var(--color-primary);
+
+    .signin-logo {
+        color: var(--color-primary);
+    }
+}
+
+.btn-primary i {
+    margin-right: 0.5rem;
+}
+
+.hamburger-mobile {
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+}
+
+/* Slutet av headern */
+
+/* Början av Main Section Hero */ /* Denna del har jag tagit hjälp från Hans video */
+
+#hero-sect {
+    background: var(--color-gradient-backup);
+    background: var(--color-gradient);
+    overflow: hidden;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+
+    .break {
+        display: block;
+    }
+
+    .container {
+        display: grid;
+    }
+
+    .headline {
+        text-align: center;
+        margin-bottom: 1rem;
+
+        h1 {
+            font-size: 34px;
+            font-weight: 800;
+        }
+    }
+
+    .content {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+
+        p {
+            font-size: 18px;
+        }
+
+        .store-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .store {
+            background-color: var(--color-heading-dark);
+            color: var(--color-white);
+            border-radius: 8px;
+            padding: 0.6em 1.5em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .discover-more {
+            color: var(--color-body-text);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            font-size: 14px;
+        }
+
+        .round-btn {
+            background-color: var(--color-white);
+            color: var(--color-navigation);
+            height: 44px;
+            width: 44px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .images {
+        display: none;
+    }
+}
+
+/* Slutet av Main Section Hero */
+
+/* Början av Main Section Loggor */ /* Denna del har jag tagit hjälp från Hans video */
+
+#logos {
+    display: none;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+.logo-box {
+    border: 1px solid var(--color-divider-border);
+    border-radius: 5px;
+    height: 100px;
+    width: 196px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/* Slutet av Main Section Loggor */
+
+/* Början av Main Section Features */
+
+#features {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+        text-align: center;
+
+        .img-card-phone {
+            display: none;
+        }
+
+        .headline {
+            margin-bottom: 2rem;
+
+            h1 {
+                font-size: 30px;
+                font-weight: 800;
+                margin-bottom: 1rem;
+            }
+            p {
+                font-size: 18px;
+                line-height: 29px;
+            }
+        }
+
+        .content {
+            display: grid;
+            gap: 2rem;
+            text-align: start;
+
+            #info {
+                display: grid;
+                grid-template-columns: auto 1fr;
+                gap: 2rem;
+            }
+            
+            #symbols {
+                background-color: var(--color-secondary);
+                padding: .8rem;
+                border-radius: 8px;
+            }
+
+            .text {
+                h2 {
+                    margin-bottom: 1rem;
+                }
+            }
+
+            h2 {
+                font-size: 20px;
+                font-weight: 800;
+            }
+
+            p {
+                font-size: 16px;
+                line-height: 26px;
+            }
+        }
+    }
+}
+
+/* Slutet av Main Section Features */
+
+/* Början av Main Section How Does It Work */
+
+#how-does-it-work {
+    background-color: var(--color-light-bg);
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .break {
+        display: none;
+    }
+
+    .top-text {
+        text-align: center;
+
+        h1 {
+            font-size: 30px;
+            font-weight: 800;
+        }
+    }
+
+    .images2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .T-your-cards, 
+        .T-transfer1, 
+        .T-transfer2, 
+        .D-transfer, 
+        .D-your-cards, 
+        .D-my-budget {
+            display: none;
+        }
+    }
+
+    .bottom-text {
+        text-align: center;
+        display: grid;
+        gap: 1rem;
+
+        .desktop, 
+        .tablet {
+            display: none;
+        }
+
+        h2 {
+            font-size: 22px;
+            font-weight: 800;
+        }
+
+        p {
+            font-size: 16px;
+        }
+    }
+}
+
+/* Slutet av Main Section How Does It Work */
+
+/* Början av Main Section Money-Transfer */
+
+#money-transfer { /* Denna sektion är bara med i Desktop så denna är stylad i MediaQuerries för Desktop */
+    display: none;
+}
+
+/* Slutet av Main Section Money-Transfer */
+
+/* Början an Main Section Reviews */
+
+#reviews { /* Denna sektion är bara med i Desktop så denna är stylad i MediaQuerries för Desktop */
+    display: none;
+}
+
+/* Slutet an Main Section Reviews */
+
+/* Början av Main Section FAQ */
+
+#FAQ { /* Biten om Accordions har jag tagit från W3 schools HOW TO Create An Accordion */
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    
+    .break {
+        display: none;
+    }
+
+    .contact-phone, 
+    .contact-chat {
+        display: none;
+    }
+
+    .container {
+        display: grid;
+        gap: 3rem;
+        justify-items: center;
+    }
+    .text-info {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+        
+        h2 {
+            font-size: 24.7px;
+            font-weight: 800;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        p {
+            font-size: 18px;
+
+        }
+    }
+
+    .accordions {
+        border: 1px solid var(--color-divider-border);
+        border-radius: .5rem;
+        overflow: hidden;
+    }
+    .accordion {
+        background-color: var(--color-white);
+        color: var(--color-heading-dark);
+        cursor: pointer;
+        padding: 1rem;
+        width: 100%;
+        text-align: left;
+        border: none;
+        outline: none;
+    }
+    .border {
+        border-bottom: 1px solid var(--color-divider-border);
+    }
+    .active, .accordion:hover {
+        text-decoration: none;
+    }
+    .panel {
+        font-size: 14px;
+        background-color: var(--color-white);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height .2s ease-out;
+
+        p {
+            padding: 1rem;
+        }
+    }
+    .accordion:before {
+        content: '\f078';
+        font-family: 'FontAwesome';
+        font-weight: 400;
+        font-size: 16px;
+        text-align: center;
+        background-color: var(--color-secondary);
+        padding: .5rem;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        color: var(--color-heading-dark);
+        float: right;
+        margin-left: 1rem;
+    }
+    .active:before {
+        content: '\f077';
+        font-family: 'FontAwesome';
+        font-weight: 400;
+        background-color: var(--color-primary);
+        color: var(--color-white);
+        box-shadow: var(--shadow-brand-btn);
+
+    }
+    .btn-contact {
+        background-color: var(--color-primary);
+        color: var(--color-white);
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: .5rem;
+    }
+}
+
+/* Slutet av Main Section FAQ */
+
+/* Början av Main Section Subscribe */
+
+#subscribe {
+    padding: var(--container-padding);
+    .D-sub-text {
+        display: none;
+    }
+
+    .container {
+        background-color: var(--color-light-bg);
+        border-radius: .5em;
+        padding-top: 2em;
+        padding-bottom: 2em;
+        display: grid;
+        gap: 2em;
+        align-items: center;
+    }
+    .sub-info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+
+        p {
+            font-size: 21px;
+            font-weight: 800;
+        }
+    }
+    .search {
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+    .input-email {
+        background-image: url();
+        font-size: 16px;
+        color: var(--color-input-placeholder);
+        border: 1px solid var(--color-forms-border);
+        border-radius: .5em 0 0 .5em;
+        padding-left: 2em;
+    }
+    .input-email::placeholder {
+        color: var(--color-input-placeholder);
+    }
+    .input-email:focus { /* Om man vill ta bort bordern som skapas vid aktivering */
+        /* outline: none; */
+    }
+    .icon {
+        color: var(--color-input-placeholder);
+        position: absolute;
+        top: 50%;
+        left: 1rem;
+        transform: translateY(-50%);
+    }
+    .label-email {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--color-primary);
+        color: var(--color-white);
+        font-size: 16px;
+        font-weight: 600;
+        text-align: center;
+        padding: 1rem;
+        border: none;
+        border-radius: 0 .5em .5em 0;
+    }
+    .label-email:hover {
+        background-color: var(--color-white);
+        color: var(--color-primary);
+        border: 1px solid var(--color-primary);
+        cursor: pointer;
+    }
+}
+
+/* Slutet av Main Section Subscribe */
+
+/* Början av Footern */
+
+footer {
+    font-size: 14px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+    }
+}
+
+/* Slutet av Footern */
+
+/* Media querries för Tablet */
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+
+    /* Header Start */
+
+    .btn-toggle-switch {
+        .label {
+            display: block;
+        }
+    }
+
+    header {
+        .container {
+            gap: 3rem;
+        }
+    }
+
+    /* Header Slut */
+
+    /* Hero-sect Start */
+
+    #hero-sect {
+        padding-bottom: 0;
+        
+        .break {
+            display: block;
+        }
+        
+        .container {
+            grid-template-columns: 270px 1fr 1fr;
+        }
+        
+        .headline {
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+            grid-column: 1 / -1;
+            h1 {
+                font-size: 44px;
+                line-height: 57.6px;
+            }
+            
+        }
+        
+        .content {
+            text-align: left;
+            grid-column: 1 / 2;
+            grid-row: 3 / 6;
+            
+            p {
+                font-size: 18px;
+                line-height: 28.8px;
+            }
+            
+            .store-buttons {
+                flex-direction: row;
+            }
+            
+            .store {
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            
+            .discover-more {
+                justify-content: flex-start;
+                margin-bottom: 3rem;
+            }
+            
+            
+        }
+        
+        .images {
+            display: block;
+            grid-column: 2 / 4;
+            grid-row: 2 / 6;
+            
+            .img-whole {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    /* Hero-sect Slut */
+
+    /* Logos Start */
+    
+    #logos {
+        display: block;
+    }
+    
+    #logo-5, #logo-6 {
+        display: none;
+    }
+    
+    /* Logos Slut */
+
+    /* Features Start */
+
+    #features {
+        .container {
+            padding: 2rem 0px 6rem 0px;
+            
+            .headline {
+                margin-bottom: 3rem;
+                
+                h1 {
+                    font-size: 34px;
+                    margin-bottom: 1.5rem;
+                }
+                
+            }
+            
+            .content {
+                grid-template-columns: 1fr 1fr;
+                
+                h2 {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+    /* Features Slut */
+
+    /* How does it work Start */
+    
+    #how-does-it-work {
+        
+        .container {
+            gap: 3rem;
+        }
+        
+        .break {
+            display: block;
+        }
+        
+        .top-text {
+            h1 {
+                font-size: 33px;
+            }
+        }
+        
+        .images2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            .T-transfer1, 
+            .T-your-cards, 
+            .T-transfer2 {
+                display: block;
+            }
+            .M-transfer {
+                display: none;
+            }
+            
+            img {
+                width: 100%;
+                height: 100%;
+            }
+            
+        }
+        
+        .bottom-text {
+            h2 {
+                font-size: 23px;
+            }
+            
+            .desktop,
+            .phone {
+                display: none;
+            }
+            
+            .tablet {
+                display: block;
+            }
+        }
+    }
+
+    /* How does it work Slut */
+
+    /* FAQ Start */
+    
+    #FAQ {
+        
+        .break {
+            display: none;
+        }
+        .container {
+            justify-items: normal;
+        }
+        
+        .text-info {
+            h2 {
+                font-size: 32px;
+                font-weight: 800;
+            }
+            p {
+                font-size: 18px;
+            }
+        }
+        .contact-btn {
+            display: none;
+        }
+        .contact-phone, 
+        .contact-chat {
+            display: block;
+            
+            p {
+                font-size: 14px;
+            }
+            
+        }
+        .accordions {
+            display: grid;
+            gap: 1rem;
+            border: none;
+            overflow: unset;
+            
+            .border {
+                box-shadow: var(--shadow-small);
+                border: none;
+                border-radius: .5rem;
+                overflow: hidden;
+            }
+            .accordion {
+                font-size: 16px;
+                font-weight: 600;
+            }
+        }
+        .contacts {
+            grid-row: 3;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        .contact-box {
+            border: 1px solid var(--color-divider-border);
+            border-radius: .5rem;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .contact-phone {
+            .icons {
+                color: var(--color-primary);
+                font-size: 2rem;
+            }
+            a {
+                color: var(--color-primary);
+                font-size: 14px;
+                font-weight: 600;
+                
+                i {
+                    margin-left: 1rem;
+                }
+            }
+        }
+        .contact-chat {
+            .icons {
+                color: var(--color-succes);
+                font-size: 2rem;
+                transform: rotateY(180deg);
+            }
+            
+            a {
+                color: var(--color-succes);
+                font-size: 14px;
+                font-weight: 600;
+                
+                i {
+                    margin-left: 1rem;
+                }
+            }
+        }
+    }
+
+    /* FAQ Slut */
+
+    /* Subscribe Start */
+    
+    #subscribe {
+        
+        .container {
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            padding-top: 4em;
+            padding-bottom: 4em;
+        }
+    }
+
+    /* Subscribe Slut */
+
+    /* Footer Start */
+
+    footer {
+        .container {
+            flex-direction: row;
+        }
+    }
+
+    /* Footer Start */
+}
+
+/* Media querries för Desktop */
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+    
+    /* Header Start */
+
+    header {
+        .container {
+            grid-template-columns: auto 1fr auto auto;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+    }
+
+    #loggain {
+        display: block;
+    }
+
+    .hamburger-mobile {
+        display: none;
+    }
+
+    .navbar {
+        display: block;
+    }
+
+    /* Header Slut */
+
+    /* Hero-sect Start */
+    
+    #hero-sect {
+        .break {
+            display: block;
+        }
+        
+        .container {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto 1fr;
+            gap: 2rem;
+        }
+        
+        .headline {
+            margin-top: 2.5rem;
+            margin-bottom: 0;
+            grid-column: 1;
+            grid-row: 1;
+            h1 {
+                font-size: 56px;
+                text-align: left;
+                line-height: 130%;
+            }
+        }
+        
+        .content {
+            text-align: left;
+            grid-column: 1;
+            grid-row: 2;
+            
+            p {
+                font-size: 18px;
+            }
+            
+            .store-buttons {
+                flex-direction: row;
+            }
+            
+            .store {
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            
+            .discover-more {
+                justify-content: flex-start;
+                margin-bottom: 3rem;
+                margin-top: 5rem;
+            }
+        }
+        
+        
+        .images {
+            display: block;
+            grid-column: 2;
+            grid-row: 1 / -1;
+            
+            .img-whole {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    /* Hero-sect Slut */
+
+    /* Logos Start */
+
+    #logo-5, #logo-6 {
+        display: flex;
+    }
+
+    /* Logos Slut */
+
+    /* Features Start */
+    
+    #features {
+        .container {
+            grid-template-columns: auto 1fr;
+            grid-template-rows: auto 1fr;
+            grid-template-areas: "phone headline" "phone content";
+            column-gap: 13rem;
+            row-gap: 1rem;
+            padding-top: 5rem;
+  
+            .img-card-phone {
+                grid-area: phone;
+                display: block;
+            }
+            
+            .headline {    
+                grid-area: headline;
+                text-align: start;
+                
+                h1 {
+                    font-size: 40px;
+                    margin-bottom: 1rem;
+                }
+            }
+            
+            .content {
+                grid-area: content;
+                row-gap: 0;
+                
+                .text {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+
+    /* Features Slut */
+
+    /* How does it work Start */
+
+    #how-does-it-work {
+        padding-bottom: 5rem;
+
+        .top-text {
+            h1 {
+                font-size: 40px;
+            }
+        }
+        
+        .images2 {
+            gap: 7rem;
+
+            .D-transfer, 
+            .D-your-cards, 
+            .D-my-budget {
+                display: block;
+            }
+
+            .T-transfer1, 
+            .T-your-cards, 
+            .T-transfer2 {
+                display: none;
+            }
+        }
+
+        .bottom-text {
+            h2 {
+                font-size: 24px;
+            }
+            .tablet {
+                display: none;
+            }
+            .desktop {
+                display: block;
+            }
+        }
+    }
+
+    /* How does it work Slut */
+
+    /* Money transfer Start */
+
+    #money-transfer {
+        display: block;
+        padding-top: 6rem;
+        padding-bottom: 5rem;
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            justify-content: center;
+
+            h2 {
+                font-size: 32px;
+                font-weight: 800; 
+              }
+        }
+        .left-transfer {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            justify-content: center;
+            align-items: center;
+        }
+        .money-transfer {
+            display: grid;
+            align-items: center;
+            gap: 2.5rem;
+        }
+        .money-check {
+            display: grid;
+            align-items: center;
+            gap: .7rem;
+
+            p {
+                display: flex;
+                align-items: center;
+                gap: .7rem;
+            }
+        }
+        .right-transfer {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            justify-content: center;
+            align-items: center;
+        }
+        .payments {
+            display: grid;
+            gap: 2.5rem;
+            padding-top: rem;
+            padding-right: 7rem;
+        }
+        .payment-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .payment-info-card {
+            display: grid;
+            gap: 1rem;
+
+            .symbols {
+                background-color: var(--color-secondary);
+                padding: .8rem;
+                border-radius: 8px;
+            }
+        }
+        .btn-learnmore {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            cursor: pointer;
+            border: none;
+            height: 3rem;
+            width: 10rem;
+            border-radius: .5rem;
+            font-size: 14px;
+            font-weight: 400;
+
+            .arrow {
+                padding-left: .5rem;
+                font-weight: 400;
+            }
+        }
+        .btn-learnmore:hover {
+            background-color: var(--color-white);
+            color: var(--color-primary);
+            border: 1px solid var(--color-primary);
+        }
+    }
+
+    /* Money transfer Slut */
+
+    /* Reviews Start */
+
+    #reviews {
+        display: block;
+        background-color: var(--color-light-bg);
+        padding-top: 7rem;
+        padding-bottom: 7rem;
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr auto auto;
+        }
+
+        .headline {
+            width: 306px;
+            height: 110px;
+
+            h2 {
+                font-size: 40px;
+                font-weight: 800;
+            }
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+        }
+
+        .card {
+            background-color: var(--color-white);
+            display: grid;
+            gap: 1rem;
+            position: relative;
+            width: 416px;
+            height: 329px;
+            border-radius: .5rem;
+            box-shadow: 1px 1px 15px -10px;
+            padding: 3.5rem 1.5rem 1.5rem 1.5rem;
+
+            .quotations {
+                background-color: var(--color-primary);
+                position: absolute;
+                padding: .8rem;
+                border: 0px;
+                border-radius: .5rem;
+                left: 1.5rem;
+                top: -1.6rem;
+                box-shadow: 0px 10px 20px -15px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+
+            .person {
+                display: grid;
+                grid-template-columns: auto 1fr;
+                gap: 1rem;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .person-img {
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .person-info {
+                display: flex;
+                flex-direction: column;
+                gap: .3rem;
+                
+                h3 {
+                    font-size: 16px;
+                    font-weight: 700;
+                }
+                p {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    /* Reviews Slut */
+
+    /* FAQ Start */
+
+    #FAQ {
+
+        .break {
+            display: block;
+        }
+        .container {
+            grid-template-columns: 1fr 1fr;
+            row-gap: 2.5rem;
+            column-gap: .5rem;
+            justify-items: baseline;
+        }
+        .text-info {
+            text-align: start;
+            grid-row: 1;
+            grid-column: 1;
+
+            h2 {
+                padding: 0;
+            }
+        }
+
+        .contact-phone {
+            padding: 1rem;
+            gap: 1rem;
+        }
+        .contact-chat {
+            padding: 1rem;
+            gap: 1rem;
+        }
+        .accordions {
+            grid-row: 1 / 4;
+            grid-column: 2;
+        }
+
+        .contacts {
+            grid-row: 2;
+            grid-column: 1;
+        }
+    }
+
+    /* FAQ Slut */
+
+    /* Subscribe Start */
+
+    #subscribe {
+        .D-sub-text {
+            display: block;
+        }
+        .M-sub-text {
+            display: none;
+        }
+        .search {
+            width: 472px;
+        }
+        .input-email {
+            width: 330px;
+        }
+        .icon {
+            left: 1.5rem;
+        }
+    }
+
+    /* Subscribe Slut */
+}

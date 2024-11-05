@@ -1,4 +1,4 @@
-import './App.css'
+import './assets/css/Inuppg.css'
 
 function App() {
 
