@@ -1,4 +1,4 @@
-import React from 'react'
+import FAQaccordions from './FAQaccordions'
 
 const FAQ = () => {
   return (
@@ -24,75 +24,9 @@ const FAQ = () => {
                     <a href="#">Contact us <i className="fa-sharp fa-solid fa-arrow-right arrow"></i></a>
                 </div>
             </div>
-            <div className="accordions"> {/* Accordions är tagna från W3 schools HOW TO Creat An Accordion */}
-                <div className="accordion1 border">
-                    <button className="accordion">Is any of my personal information stored in the App?</button>
-                    <div className="panel">
-                        <p>Nunc duis id aenean gravida tincidunt eu, tempor ullamcorper. Viverra aliquam arcu,
-                            viverra et, cursus. Aliquet pretium cursus adipiscing gravida et consequat lobortis
-                            arcu velit. Nibh pharetra fermentum duis accumsan lectus non. Massa cursus molestie
-                            lorem scelerisque pellentesque. Nisi, enim, arcu purus gravida adipiscing euismod
-                            montes, duis egestas. Vehicula eu etiam quam tristique tincidunt suspendisse ut
-                            consequat.</p>
-                    </div>
-                </div>
-                <div className="accordion2 border">
-                    <button className="accordion">What formats can I download my transaction history in?</button>
-                    <div className="panel">
-                        <p>Nunc duis id aenean gravida tincidunt eu, tempor ullamcorper. Viverra aliquam arcu,
-                            viverra et, cursus. Aliquet pretium cursus adipiscing gravida et consequat lobortis
-                            arcu velit. Nibh pharetra fermentum duis accumsan lectus non. Massa cursus molestie
-                            lorem scelerisque pellentesque. Nisi, enim, arcu purus gravida adipiscing euismod
-                            montes, duis egestas. Vehicula eu etiam quam tristique tincidunt suspendisse ut
-                            consequat.</p>
-                    </div>
-                </div>
-                <div className="accordion3 border">
-                    <button className="accordion">Can I schedule future transfers?</button>
-                    <div className="panel">
-                        <p>Nunc duis id aenean gravida tincidunt eu, tempor ullamcorper. Viverra aliquam arcu,
-                            viverra et, cursus. Aliquet pretium cursus adipiscing gravida et consequat lobortis
-                            arcu velit. Nibh pharetra fermentum duis accumsan lectus non. Massa cursus molestie
-                            lorem scelerisque pellentesque. Nisi, enim, arcu purus gravida adipiscing euismod
-                            montes, duis egestas. Vehicula eu etiam quam tristique tincidunt suspendisse ut
-                            consequat.</p>
-                    </div>
-                </div>
-                <div className="accordion4 border">
-                    <button className="accordion">When can I use Banking App services?</button>
-                    <div className="panel">
-                        <p>Nunc duis id aenean gravida tincidunt eu, tempor ullamcorper. Viverra aliquam arcu,
-                            viverra et, cursus. Aliquet pretium cursus adipiscing gravida et consequat lobortis
-                            arcu velit. Nibh pharetra fermentum duis accumsan lectus non. Massa cursus molestie
-                            lorem scelerisque pellentesque. Nisi, enim, arcu purus gravida adipiscing euismod
-                            montes, duis egestas. Vehicula eu etiam quam tristique tincidunt suspendisse ut
-                            consequat.</p>
-                    </div>
-                </div>
-                <div className="accordion5 border">
-                    <button className="accordion">Can I create my own password that is easy for me to
-                        remember?</button>
-                    <div className="panel">
-                        <p>Nunc duis id aenean gravida tincidunt eu, tempor ullamcorper. Viverra aliquam arcu,
-                            viverra et, cursus. Aliquet pretium cursus adipiscing gravida et consequat lobortis
-                            arcu velit. Nibh pharetra fermentum duis accumsan lectus non. Massa cursus molestie
-                            lorem scelerisque pellentesque. Nisi, enim, arcu purus gravida adipiscing euismod
-                            montes, duis egestas. Vehicula eu etiam quam tristique tincidunt suspendisse ut
-                            consequat.</p>
-                    </div>
-                </div>
-                <div className="accordion6 border">
-                    <button className="accordion">What happens if I forget or lose my password?</button>
-                    <div className="panel">
-                        <p>Nunc duis id aenean gravida tincidunt eu, tempor ullamcorper. Viverra aliquam arcu,
-                            viverra et, cursus. Aliquet pretium cursus adipiscing gravida et consequat lobortis
-                            arcu velit. Nibh pharetra fermentum duis accumsan lectus non. Massa cursus molestie
-                            lorem scelerisque pellentesque. Nisi, enim, arcu purus gravida adipiscing euismod
-                            montes, duis egestas. Vehicula eu etiam quam tristique tincidunt suspendisse ut
-                            consequat.</p>
-                    </div>
-                </div>
-            </div>
+
+            <FAQaccordions />
+
             <div className="contact-btn">
                 <button className="btn-contact">Contact us now</button>
             </div>
