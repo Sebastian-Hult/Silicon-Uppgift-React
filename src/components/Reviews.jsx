@@ -1,18 +1,23 @@
-import React from 'react'
-import Quotations from '../assets/Images/quotations.svg'
-import FourStarRating from '../assets/Images/4-star-rating.svg'
-import Fannie from '../assets/Images/Fannie.svg'
-import FiveStarRating from '../assets/Images/5-star-rating.svg'
-import Albert from '../assets/Images/Albert.svg'
+
+// import Quotations from '../assets/Images/quotations.svg'
+// import FourStarRating from '../assets/Images/4-star-rating.svg'
+// import Fannie from '../assets/Images/Fannie.svg'
+// import FiveStarRating from '../assets/Images/5-star-rating.svg'
+// import Albert from '../assets/Images/Albert.svg'
+import ReviewComponents from './ReviewComponents'
 
 const Reviews = () => {
+
+
+
   return (
     <section id="reviews">
         <div className="container">
             <div className="headline">
                 <h2>Clients are Loving Our App</h2>
             </div>
-            <div className="cards">
+            <ReviewComponents />
+            {/* <div className="cards">
                 <div className="card">
                     <img className="quotations" src={Quotations} />
                     <img src={FourStarRating} />
@@ -45,7 +50,7 @@ const Reviews = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
     </section>
   )

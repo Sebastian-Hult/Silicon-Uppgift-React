@@ -1349,6 +1349,9 @@ footer {
                 top: -1.6rem;
                 box-shadow: 0px 10px 20px -15px;
             }
+            .star-rating {
+                color: rgb(255, 193, 23);
+            }
 
             p {
                 font-size: 18px;
