@@ -1,6 +1,8 @@
 import React from 'react'
 import Appstore from '../assets/Images/appstore.svg'
+import AppstoreDark from '../assets/Images/Appstore-dark.svg'
 import Playstore from '../assets/Images/playstore.svg'
+import PlaystoreDark from '../assets/Images/Playstore-dark.svg'
 import Iphones from '../assets/Images/Telefonas uppe.svg'
 
 const Hero = () => {
@@ -14,9 +16,16 @@ const Hero = () => {
                 <p>We offer you a new generation of the mobile banking. <br className="break" /> Save, spend & manage
                     money in your pocket.</p>
                 <div className="store-buttons">
-                    <a className="store" href="#"><img src={Appstore} /></a>
-                    <a className="store" href="#"><img src={Playstore} /></a>
+                    <a className="store" href="#">
+                        <img className='light-logos' src={Appstore} />
+                        <img className='dark-logos' src={AppstoreDark} />
+                    </a>
+                    <a className="store" href="#">
+                        <img className='light-logos' src={Playstore} />
+                        <img className='dark-logos' src={PlaystoreDark} />
+                    </a>
                 </div>
+
 
                 <a href="#" className="discover-more">
                     <span className="round-btn">

@@ -19,6 +19,16 @@
     --color-primary: #6366F1;
     --color-gradient: linear-gradient(0deg, rgba(99,102,241,0.1) 0%, rgba(218,70,239,0.05) 42%, rgba(241,244,253,0.07) 83%);
     --color-gradient-backup: background: rgb(99,102,241);
+    /* Primary Button Colors */
+    --color-btn-primary: #6366F1;
+    --color-btn-hover: #ffffff;
+    --color-btn-text: #ffffff;
+    --color-btn-text-hover: #6366F1;
+    --color-signin-hover: #ffffff;
+    /* Accordion Colors */
+    --color-acc-box: #fff;
+    --color-acc-arrow: #F3F6FF;
+    --color-acc-border: #E2E5F1;
     /* System Colors */
     --color-error: #EF4444;
     --color-succes: #22C55E;
@@ -59,12 +69,24 @@ html[data-theme="dark"] {
     --color-body-bg: #0B0F19;
     --color-body-text: #fff;
     --color-heading-dark: #fff;
-    --color-light-bg: #33354D;
+    --color-light-bg: rgba(255, 255, 255, 0.01);
     --color-white: #33354D;
-    --color-secondary: #33354D;
+    --color-secondary: rgba(99, 101, 241, 0.08);
+    --color-navigation: #fff;
+    --color-btn-hover: #0B0F19;
+    --color-signin-hover: rgba(255, 255, 255, 0);
+    --color-acc-box: rgba(255, 255, 255, 0.04);
+    --color-acc-arrow: rgba(255, 255, 255, 0.04);
+    --color-acc-border: rgba(255, 255, 255, 0.15);
     /* --clr-text-body: var(--clr-white); */
     /* --clr-body-bg: var(--color-dark); */
+
+    .light-logos { display: none; }
+    .dark-logos { display: block; }
 }
+
+.light-logos { display: block; }
+.dark-logos { display: none; }
 
 /* ---UTILITYKLASSER--- */
 
@@ -115,6 +137,9 @@ a:hover {
 /* Början av Headern */ /* Denna del har jag tagit hjälp från Hans video */
 
 header {
+    position: absolute;
+    width: 100%;
+    top: 0;
     .container {
         display: grid;
         justify-content: center;
@@ -131,7 +156,7 @@ header {
 }
 
 .nav-link {
-    color: var(--color-heading-dark);
+    color: var(--color-navigation);
     font-weight: 600;
     text-decoration: none;
 }
@@ -202,7 +227,7 @@ header {
     }
     input[type="checkbox"]:checked ~ .slider::before {
         left: calc(100% - var(--_h));
-        background-color: var(--color-white);
+        background-color: #fff;
     }
     input[type="checkbox"]:checked ~ .slider {
         background-color: var(--color-primary);
@@ -215,8 +240,8 @@ header {
 }
 
 .btn-primary {
-    background-color: var(--color-primary); 
-    color: var(--color-white);
+    background-color: var(--color-btn-primary); 
+    color: var(--color-btn-text);
     border: none;
     border-radius: 8px;
     padding: 12px 25px;
@@ -227,10 +252,10 @@ header {
 }
 
 .btn-primary:hover {
-    background-color: var(--color-white);
-    color: var(--color-primary);
+    background-color: var(--color-signin-hover);
+    color: var(--color-btn-text-hover);
     text-decoration: none;
-    border: 1px solid var(--color-primary);
+    border: 1px solid var(--color-btn-text-hover);
 
     .signin-logo {
         color: var(--color-primary);
@@ -243,6 +268,7 @@ header {
 
 .hamburger-mobile {
     background-color: transparent;
+    color: var(--color-body-bg);
     border: none;
     font-size: 2rem;
 }
@@ -256,7 +282,7 @@ header {
     background: var(--color-gradient);
     overflow: hidden;
     padding-bottom: 2rem;
-    padding-top: 2rem;
+    padding-top: 7rem;
 
     .break {
         display: block;
@@ -313,10 +339,10 @@ header {
         }
 
         .round-btn {
-            background-color: var(--color-white);
+            background-color: var(--color-acc-box);
             color: var(--color-navigation);
-            height: 44px;
-            width: 44px;
+            height: 2.75rem;
+            aspect-ratio: 1;
             border-radius: 50%;
             display: flex;
             justify-content: center;
@@ -346,7 +372,7 @@ header {
     }
 }
 .logo-box {
-    border: 1px solid var(--color-divider-border);
+    border: 1px solid var(--color-acc-border);
     border-radius: 5px;
     height: 100px;
     width: 196px;
@@ -543,12 +569,12 @@ header {
     }
 
     .accordions {
-        border: 1px solid var(--color-divider-border);
+        border: 1px solid var(--color-acc-border);
         border-radius: .5rem;
         overflow: hidden;
     }
     .accordion {
-        background-color: var(--color-white);
+        background-color: var(--color-acc-box);
         color: var(--color-heading-dark);
         cursor: pointer;
         padding: 1rem;
@@ -562,7 +588,7 @@ header {
         align-items: center;
     }
     .border {
-        border-bottom: 1px solid var(--color-divider-border);
+        border-bottom: 1px solid var(--color-acc-border);
     }
     .active, .accordion:hover {
         text-decoration: none;
@@ -571,7 +597,7 @@ header {
         display: grid;
         grid-template-rows: 0fr;
         font-size: 14px;
-        background-color: var(--color-white);
+        background-color: var(--color-acc-box);
         overflow: hidden;
         transition: grid-template-rows 300ms ease-out;
 
@@ -587,9 +613,9 @@ header {
 
     }
     .accordion-arrow {
-        background-color: var(--color-secondary);
+        background-color: var(--color-acc-arrow);
         color: var(--color-heading-dark);
-        width: 2rem;
+        width: 2.75rem;
         aspect-ratio: 1;
         border-radius: 50%;
         display: grid;
@@ -600,16 +626,22 @@ header {
     }
     .accordion-arrow.active {
         background-color: var(--color-primary);
-        color: var(--color-white);
+        color: #fff;
         box-shadow: var(--shadow-brand-btn);
         rotate: 180deg;
     }
     .btn-contact {
-        background-color: var(--color-primary);
-        color: var(--color-white);
+        background-color: var(--color-btn-primary);
+        color: var(--color-btn-text);
+        cursor: pointer;
         padding: 1rem 2rem;
         border: none;
         border-radius: .5rem;
+    }
+    .btn-contact:hover {
+        background-color: var(--color-btn-hover);
+        color: var(--color-btn-text-hover);
+        border: 1px solid var(--color-btn-text-hover);
     }
 }
 
@@ -666,15 +698,15 @@ header {
         color: var(--color-input-placeholder);
         position: absolute;
         top: 50%;
-        left: 1rem;
+        left: 10em;
         transform: translateY(-50%);
     }
     .label-email {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: var(--color-primary);
-        color: var(--color-white);
+        background-color: var(--color-btn-primary);
+        color: var(--color-btn-text);
         font-size: 16px;
         font-weight: 600;
         text-align: center;
@@ -683,9 +715,9 @@ header {
         border-radius: 0 .5em .5em 0;
     }
     .label-email:hover {
-        background-color: var(--color-white);
-        color: var(--color-primary);
-        border: 1px solid var(--color-primary);
+        background-color: var(--color-btn-hover);
+        color: var(--color-btn-text-hover);
+        border: 1px solid var(--color-btn-text-hover);
         cursor: pointer;
     }
 }
@@ -722,6 +754,7 @@ footer {
     .btn-toggle-switch {
         .label {
             display: block;
+            color: var(--color-navigation);
         }
     }
 
@@ -951,7 +984,7 @@ footer {
             gap: 1.5rem;
         }
         .contact-box {
-            border: 1px solid var(--color-divider-border);
+            border: 1px solid var(--color-acc-border);
             border-radius: .5rem;
             padding: 1.5rem;
             display: flex;
@@ -1003,6 +1036,10 @@ footer {
             gap: 0;
             padding-top: 4em;
             padding-bottom: 4em;
+        }
+
+        .icon {
+            left: 1rem;
         }
     }
 
@@ -1275,8 +1312,8 @@ footer {
             }
         }
         .btn-learnmore {
-            background-color: var(--color-primary);
-            color: var(--color-white);
+            background-color: var(--color-btn-primary);
+            color: var(--color-btn-text);
             cursor: pointer;
             border: none;
             height: 3rem;
@@ -1291,9 +1328,9 @@ footer {
             }
         }
         .btn-learnmore:hover {
-            background-color: var(--color-white);
-            color: var(--color-primary);
-            border: 1px solid var(--color-primary);
+            background-color: var(--color-btn-hover);
+            color: var(--color-btn-text-hover);
+            border: 1px solid var(--color-btn-text-hover);
         }
     }
 
@@ -1329,7 +1366,7 @@ footer {
         }
 
         .card {
-            background-color: var(--color-white);
+            background-color: var(--color-acc-box);
             display: grid;
             gap: 1rem;
             position: relative;
