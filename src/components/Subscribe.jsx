@@ -1,7 +1,10 @@
-import React from 'react'
 import SubBell from '../assets/Images/notification.svg'
+import SubscribeForm from './SubscribeForm'
 
 const Subscribe = () => {
+
+
+
   return (
     <section id="subscribe">
         <div className="container">
@@ -11,11 +14,7 @@ const Subscribe = () => {
                     latest updates</p>
                 <p className="M-sub-text">Subscribe to our newsletter</p>
             </div>
-            <div className="search">
-                <i className="fa-light fa-envelope icon"></i>
-                <input className="input-email" name="email" type="email" placeholder="Your Email" />
-                <label className="label-email">Subscribe</label>
-            </div>
+            <SubscribeForm />
         </div>
     </section>
   )

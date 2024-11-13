@@ -664,6 +664,15 @@ header {
         gap: 2em;
         align-items: center;
     }
+
+    .container form span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: .7rem;
+        color: red;
+    }
+
     .sub-info {
         display: flex;
         justify-content: center;
@@ -707,7 +716,7 @@ header {
         align-items: center;
         background-color: var(--color-btn-primary);
         color: var(--color-btn-text);
-        font-size: 16px;
+        font-size: 1rem;
         font-weight: 600;
         text-align: center;
         padding: 1rem;
@@ -715,6 +724,23 @@ header {
         border-radius: 0 .5em .5em 0;
     }
     .label-email:hover {
+        background-color: var(--color-btn-hover);
+        color: var(--color-btn-text-hover);
+        border: 1px solid var(--color-btn-text-hover);
+        cursor: pointer;
+    }
+
+    .btn-back {
+        background-color: var(--color-btn-primary);
+        color: var(--color-btn-text);
+        font-size: 1rem;
+        font-weight: 600;
+        text-align: center;
+        padding: 1rem;
+        border: none;
+        border-radius: .5em;
+    }
+    .btn-back:hover {
         background-color: var(--color-btn-hover);
         color: var(--color-btn-text-hover);
         border: 1px solid var(--color-btn-text-hover);
