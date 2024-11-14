@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import SubBell from '../assets/Images/notification.svg'
 
 const SubscribeForm = () => {
 
@@ -65,15 +64,13 @@ const SubscribeForm = () => {
 
     if (submitted) {
         return (
-
-            <div className="success">
-                <div className="sub-msg">
+            <div className="container">
+                <div className="sub-info">
                     <p className="D-sub-text">Thank you for subscribing to out newsletter!<br className='break' />We hope you'll enjoy the updates to come!</p>
                     <p className="M-sub-text">Thank you for subscribing to out newsletter!<br className='break' />We hope you'll enjoy the updates to come!</p>
                 </div>
                 <button className='btn-back' onClick={handleBack}>Back to main site</button>
             </div>
-
         )
     }
 
@@ -82,7 +79,7 @@ const SubscribeForm = () => {
         <div className="search">
             <i className="fa-light fa-envelope icon"></i>
             <input className="input-email" name="email" type="email" value={formData.email} onChange={handelChange} required placeholder="Your Email" />
-            <label type="submit" className="label-email">Subscribe</label>
+            <button type="submit" className="label-email">Subscribe</button>
         </div>
         <span>{errors.email && errors.email}</span>
     </form>
