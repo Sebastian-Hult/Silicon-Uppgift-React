@@ -730,6 +730,18 @@ header {
         cursor: pointer;
     }
 
+
+    .success {
+        width: 85%;
+        margin: 3rem auto;
+        display: grid;
+    }
+    .sub-msg {
+        height: 80vh;
+        padding: 1rem;
+        text-align: center;
+    }
+
     .btn-back {
         background-color: var(--color-btn-primary);
         color: var(--color-btn-text);
