@@ -1,5 +1,11 @@
 import React, { useState } from 'react'
 
+{/* 
+    The validation of the form is made with a little help from both Hans and ChatGPT. 
+    (General structure of the code with help from Hans)
+    (The "else if" in both handleChange and handleSubmit, ChatGPT helped me with) 
+*/}
+
 const SubscribeForm = () => {
 
     const [formData, setFormData] = useState({ email: '' })

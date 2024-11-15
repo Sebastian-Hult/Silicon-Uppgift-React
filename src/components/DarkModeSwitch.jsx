@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-// Darkmode fick jag hjälp från Hans video
+// I got help from Hans video with the Darkmode, where he transfers code from normal JavaScript to React.
 
 const DarkModeSwitch = () => {
     const [isDarkMode, setIsDarkMode] = useState(false);
